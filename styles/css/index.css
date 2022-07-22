@@ -1,0 +1,19 @@
+#hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#hero h2 {
+  font-size: 4rem;
+}
+
+#hero h3 {
+  font-size: 3rem;
+}
+
+#about {
+  display: flex;
+}/*# sourceMappingURL=index.css.map */
