@@ -2,13 +2,22 @@
 :root {
   --roboto: "Roboto",
       sans-serif;
-  --fontColor: black ;
+  --fontColor: white;
+  --actionColor: #276df1;
+  --actionLighter: #4a89ff;
+  --secActionColor: #6d48d2;
+  --backColor: rgb(5, 14, 27);
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  color: var(--fontColor);
+}
+
+body {
+  background-color: var(--backColor);
 }
 
 html {
@@ -17,7 +26,6 @@ html {
 
 a {
   text-decoration: none;
-  color: var(--fontColor);
 }
 
 nav {
@@ -25,6 +33,10 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 20px 15px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 7px 9px -7px black;
 }
 
 nav a {

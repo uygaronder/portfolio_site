@@ -1,18 +1,86 @@
+// Hero Section
+
 #hero{
     height: 100vh;
     display: flex;
-    align-items: center;
     flex-direction: column;
     text-align: center;
+    justify-content: center;
+    position: relative;
 }
+
+#hero #heroTexts{
+    text-align: start;
+    margin: auto;
+}
+
+#hero span{
+    color: var(--actionLighter);
+    font-weight: 600;
+}
+
 #hero h2{
     font-size: 4rem;
 }
 
 #hero h3{
     font-size: 3rem;
+    opacity: .75;
+}
+
+#hero .scrollContainer{
+    position: absolute;
+    bottom: 10%;
+    height: 50px;
+    width: 30px;
+    border: 3px solid white;
+    display: block;
+    border-radius: 30px;
+    left: 48%;
+}
+
+#hero .scrollIndicator{
+    animation: scrollIndicator 2s 3;
 }
 
 #about{
     display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--fontColor);
+    position: relative;
+    min-height: 60vh;
+}
+
+#about > *{
+    padding: 15px;
+}
+
+#about p{
+    max-width: 40ch;
+}
+
+#aboutLinks{
+    position: absolute;
+    bottom: 0;
+}
+
+.line{
+    width: 1px;
+    height: 150px;
+    background-color: white;
+    display: block;
+}
+
+@keyframes scrollIndicator {
+    0% {
+            transform: translateY(0);
+        }
+    
+        50% {
+            transform: translateY(7px);
+        }
+        100% {
+            transform: translateY(0);
+        }
 }
