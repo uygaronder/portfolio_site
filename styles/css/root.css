@@ -1,4 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+::-webkit-scrollbar {
+  width: 5px;
+  padding: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1b304d;
+  padding: 5px;
+  border-radius: 12px;
+  width: 8px;
+}
+
 :root {
   --roboto: "Roboto",
       sans-serif;
@@ -6,7 +22,7 @@
   --actionColor: #276df1;
   --actionLighter: #4a89ff;
   --secActionColor: #6d48d2;
-  --backColor: rgb(5, 14, 27);
+  --backColor: #050e1b;
 }
 
 * {

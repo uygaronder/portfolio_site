@@ -1,5 +1,6 @@
 #hero {
   height: 100vh;
+  margin: 0;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -7,9 +8,15 @@
   position: relative;
 }
 
+canvas {
+  display: block;
+}
+
 #hero #heroTexts {
   text-align: start;
   margin: auto;
+  position: absolute;
+  align-self: center;
 }
 
 #hero span {
