@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap');
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 8px;
     padding: 10px;
 }
 
@@ -19,11 +20,15 @@
 :root {
     --roboto: 'Roboto',
         sans-serif;
+    --oswald: 'Oswald',
+        sans-serif;
+    --crimson: 'Crimson Text', serif;
     --fontColor: white;
-    --actionColor: #276df1;
-    --actionLighter: #4a89ff;
-    --secActionColor: #6d48d2;
+    --actionColor: #1dda6b;
+    --actionLighter: #61db94;
+    --actionDarker: #308553;
     --backColor: #050e1b;
+    --backColorLighter: #0a1d36;
 }
 
 *{
@@ -54,6 +59,39 @@ nav{
     position: sticky;
     top: 0;
     box-shadow: 0 7px 9px -7px black;
+    z-index: 99;
+    background-color: inherit;
+    align-items: center;
+    z-index: 9999;
+}
+
+nav > #links{
+    display: flex;
+}
+
+nav a{
+    position: relative;
+    z-index: 111;
+}
+
+nav a::before{
+    position: absolute;
+    display:block;
+    background-color: var(--actionDarker);
+    height: 6px;
+    width: 0px;
+    content: " ";
+    bottom: 0;
+    z-index: -10;
+    transition: .2s ease-in;
+}
+
+nav a:hover::before{
+    width: 95%;
+}
+
+nav > div:first-of-type{
+    font-size: 1.6rem;
 }
 
 nav a{
