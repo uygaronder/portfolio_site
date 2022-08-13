@@ -1,5 +1,6 @@
 #hero {
   height: 100vh;
+  width: 100vw;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -104,7 +105,7 @@ canvas {
 #projects {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
   color: var(--fontColor);
   position: relative;
@@ -113,25 +114,21 @@ canvas {
 }
 #projects .title {
   align-self: flex-start;
+  margin-bottom: 25px;
 }
 #projects .project {
   display: flex;
   width: 100%;
   min-height: 300px;
-  margin-bottom: 10%;
-}
-#projects .project .img {
-  max-height: 100px;
-  -o-object-fit: contain;
-     object-fit: contain;
-  right: 0;
+  margin-bottom: 10vw;
+  max-width: 1200px;
+  align-items: center;
 }
 #projects .project .projectInfo {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  justify-self: right;
   z-index: 100;
-  margin: auto;
 }
 #projects .project .projectInfo .projectPrompt {
   font-size: 1.2rem;
@@ -149,7 +146,6 @@ canvas {
   background-color: var(--backColorLighter);
   border-radius: 4px;
   color: rgba(255, 255, 255, 0.562);
-  text-align: end;
   margin-bottom: 20px;
   max-width: 60%;
   box-shadow: 0px 0px 3px 0px #0a1e3a;
@@ -172,14 +168,30 @@ canvas {
   width: 24px;
   filter: invert(1);
 }
-#projects .project img {
+#projects .project .img {
   position: absolute;
-  width: 50%;
 }
-#projects .project:nth-child(odd) {
+#projects .project .img img {
+  width: 60vw;
+  max-width: 700px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+#projects .project:nth-of-type(odd) {
   margin-left: 0;
 }
-#projects .project:nth-child(even) {
-  margin-right: 0;
-  align-items: flex-start;
+#projects .project:nth-of-type(odd) .projectInfo {
+  align-items: flex-end;
+}
+#projects .project:nth-of-type(odd) .projectInfo .projectDescription {
+  text-align: end;
+}
+#projects .project:nth-of-type(even) {
+  flex-direction: row;
+  margin: 0;
+  position: relative;
+}
+#projects .project:nth-of-type(even) .img {
+  position: absolute;
+  right: 0;
 }/*# sourceMappingURL=index.css.map */
