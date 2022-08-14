@@ -194,4 +194,61 @@ canvas {
 #projects .project:nth-of-type(even) .img {
   position: absolute;
   right: 0;
+}
+
+#smallerProjects {
+  margin: 0 10%;
+  margin-top: 80px;
+  display: flex;
+}
+#smallerProjects .smallerProject {
+  cursor: pointer;
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+#smallerProjects .smallerProject .morePrompt {
+  position: absolute;
+  align-items: center;
+  z-index: 999;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(54, 54, 54, 0.274);
+  display: flex;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.2s ease;
+}
+#smallerProjects .smallerProject .morePrompt p {
+  color: black;
+  background-color: white;
+  padding: 35px 5px;
+  border-radius: 50%;
+  align-self: center;
+}
+#smallerProjects .smallerProject:hover .morePrompt {
+  opacity: 1;
+}
+
+#contact {
+  margin: 30px 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#contact p {
+  width: 50ch;
+  font-size: 1.3rem;
+}
+#contact button {
+  padding: 10px 15px;
+  background-color: transparent;
+  border: 1px solid var(--actionColor);
+  border-radius: 3px;
+  font-family: var(--roboto);
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-top: 15px;
+  color: white;
 }/*# sourceMappingURL=index.css.map */
