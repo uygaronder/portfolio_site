@@ -83,11 +83,11 @@ function verticePositions(array) {
 function randomizeVertices() {
     for (let i = 0; i < planeMesh.geometry.vertices.length; i++) {
         planeMesh.geometry.vertices[i].x +=
-            Math.cos(frame) * 0.0001 + (Math.random() - 0.5) * 0.01;
+            Math.cos(frame) * 0.0001 + (Math.random() - 0.5) * 0.001;
         planeMesh.geometry.vertices[i].y +=
-            Math.cos(frame) * 0.0001 + (Math.random() - 0.5) * 0.01;
+            Math.cos(frame) * 0.0001 + (Math.random() - 0.5) * 0.002;
         planeMesh.geometry.vertices[i].z +=
-            Math.cos(frame) * 0.0001 + (Math.random() - 0.5) * 0.01;
+            Math.cos(frame) * 0.0001 + (Math.random() - 0.5) * 0.003;
     }
 
     planeMesh.geometry.verticesNeedUpdate = true;
@@ -95,9 +95,9 @@ function randomizeVertices() {
 
 /* skill octahedron */
 
-const octahedronGeometry = new THREE.OctahedronGeometry(10, 1);
+const octahedronGeometry = new THREE.OctahedronGeometry(5, 0);
 const octahedronMaterial = new THREE.MeshPhongMaterial({
-    color: 0x050e1b,
+    color: 0xffffff,
     flatShading: THREE.FlatShading,
 });
 const octahedronMesh = new THREE.Mesh(octahedronGeometry, octahedronMaterial);
@@ -106,22 +106,23 @@ const octahedronLight = new THREE.DirectionalLight(0xffffff, 1, 500);
 octahedronLight.position.set(10, 0, 25);
 
 const octahedronScene = new THREE.Scene();
+octahedronScene.add(octahedronMesh);
+octahedronScene.add(octahedronLight);
 const octahedronCamera = new THREE.PerspectiveCamera(
     75,
     window.innerWidth / window.innerHeight,
     0.1,
     1000
 );
-
-octahedronScene.add(octahedronMesh);
 octahedronScene.add(octahedronCamera);
-octahedronScene.add(octahedronLight);
 
 camera.position.z = 4;
 const octaRenderer = new THREE.WebGLRenderer({ antialias: true });
 octaRenderer.setClearColor("#050e1b");
 octaRenderer.setSize(window.innerWidth / 2.5, window.innerHeight / 2);
 octaRenderer.setPixelRatio(devicePixelRatio);
+console.log(octahedronScene);
+console.log(scene);
 document.getElementById("about").appendChild(octaRenderer.domElement);
 /* skill octahedron end */
 
@@ -130,6 +131,8 @@ function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
     randomizeVertices();
+
+    octaRenderer.render(octahedronScene, octahedronCamera);
 }
 
 randomizeVertices();
