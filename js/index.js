@@ -92,47 +92,11 @@ function randomizeVertices() {
 
     planeMesh.geometry.verticesNeedUpdate = true;
 }
-
-/* skill octahedron */
-
-const octahedronGeometry = new THREE.OctahedronGeometry(5, 0);
-const octahedronMaterial = new THREE.MeshPhongMaterial({
-    color: 0xffffff,
-    flatShading: THREE.FlatShading,
-});
-const octahedronMesh = new THREE.Mesh(octahedronGeometry, octahedronMaterial);
-
-const octahedronLight = new THREE.DirectionalLight(0xffffff, 1, 500);
-octahedronLight.position.set(10, 0, 25);
-
-const octahedronScene = new THREE.Scene();
-octahedronScene.add(octahedronMesh);
-octahedronScene.add(octahedronLight);
-const octahedronCamera = new THREE.PerspectiveCamera(
-    75,
-    window.innerWidth / window.innerHeight,
-    0.1,
-    1000
-);
-octahedronScene.add(octahedronCamera);
-
-camera.position.z = 4;
-const octaRenderer = new THREE.WebGLRenderer({ antialias: true });
-octaRenderer.setClearColor("#050e1b");
-octaRenderer.setSize(window.innerWidth / 2.5, window.innerHeight / 2);
-octaRenderer.setPixelRatio(devicePixelRatio);
-console.log(octahedronScene);
-console.log(scene);
-document.getElementById("about").appendChild(octaRenderer.domElement);
-/* skill octahedron end */
-
 function animate() {
     frame += 0.01;
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
     randomizeVertices();
-
-    octaRenderer.render(octahedronScene, octahedronCamera);
 }
 
 randomizeVertices();

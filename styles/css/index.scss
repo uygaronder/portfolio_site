@@ -1,3 +1,11 @@
+// general
+
+.title {
+    font-family: var(--oswald);
+    font-size: 3rem;
+    padding-left: 10px;
+}
+
 // Hero Section
 
 
@@ -10,49 +18,45 @@
     text-align: center;
     justify-content: center;
     position: relative;
+    #heroTexts {
+        text-align: start;
+        margin: auto;
+        position: absolute;
+        align-self: center;
+    }
+    span {
+        color: var(--actionColor);
+        font-weight: 600;
+        font-size: 1.2rem;
+    }
+    h2 {
+        font-size: 4rem;
+        font-family: var(--oswald);
+    }
+    h3 {
+        font-size: 3rem;
+        opacity: .75;
+    }
+    .scrollContainer {
+        position: absolute;
+        bottom: 10%;
+        height: 50px;
+        width: 30px;
+        border: 3px solid white;
+        display: block;
+        border-radius: 30px;
+        left: 48%;
+    }
+    .scrollIndicator {
+        animation: scrollIndicator 2s infinite;
+    }
 }
 
 canvas {
     display: block;
 }
 
-#hero #heroTexts{
-    text-align: start;
-    margin: auto;
-    position: absolute;
-    align-self: center;
-}
-
-#hero span{
-    color: var(--actionColor);
-    font-weight: 600;
-    font-size: 1.2rem;
-}
-
-#hero h2{
-    font-size: 4rem;
-    font-family: var(--oswald);
-}
-
-#hero h3{
-    font-size: 3rem;
-    opacity: .75;
-}
-
-#hero .scrollContainer{
-    position: absolute;
-    bottom: 10%;
-    height: 50px;
-    width: 30px;
-    border: 3px solid white;
-    display: block;
-    border-radius: 30px;
-    left: 48%;
-}
-
-#hero .scrollIndicator{
-    animation: scrollIndicator 2s infinite;
-}
+// About Section
 
 #about{
     display: flex;
@@ -62,24 +66,15 @@ canvas {
     position: relative;
     min-height: 60vh;
     padding: 0 10%;
-}
-
-
-.title{
-    font-family: var(--oswald);
-    font-size: 3rem;
-    padding-left: 10px;
-}
-
-#about p{
-    max-width: 40ch;
-    font-size: 1.3rem;
-}
-
-#about #aboutInfo a{
-    font-family: var(--roboto);
-    font-size: 1.2rem;
-    color: var(--actionColor);
+    p {
+            max-width: 40ch;
+            font-size: 1.3rem;
+    }
+    #aboutInfo a {
+        font-family: var(--roboto);
+        font-size: 1.2rem;
+        color: var(--actionColor);
+    }
 }
 
 
@@ -95,6 +90,8 @@ canvas {
             transform: translateY(3px);
         }
 }
+
+//Big Projects ection
 
 #projects{
     display: flex;

@@ -1,3 +1,9 @@
+.title {
+  font-family: var(--oswald);
+  font-size: 3rem;
+  padding-left: 10px;
+}
+
 #hero {
   height: 100vh;
   width: 100vw;
@@ -8,34 +14,25 @@
   justify-content: center;
   position: relative;
 }
-
-canvas {
-  display: block;
-}
-
 #hero #heroTexts {
   text-align: start;
   margin: auto;
   position: absolute;
   align-self: center;
 }
-
 #hero span {
   color: var(--actionColor);
   font-weight: 600;
   font-size: 1.2rem;
 }
-
 #hero h2 {
   font-size: 4rem;
   font-family: var(--oswald);
 }
-
 #hero h3 {
   font-size: 3rem;
   opacity: 0.75;
 }
-
 #hero .scrollContainer {
   position: absolute;
   bottom: 10%;
@@ -46,10 +43,13 @@ canvas {
   border-radius: 30px;
   left: 48%;
 }
-
 #hero .scrollIndicator {
   -webkit-animation: scrollIndicator 2s infinite;
           animation: scrollIndicator 2s infinite;
+}
+
+canvas {
+  display: block;
 }
 
 #about {
@@ -61,18 +61,10 @@ canvas {
   min-height: 60vh;
   padding: 0 10%;
 }
-
-.title {
-  font-family: var(--oswald);
-  font-size: 3rem;
-  padding-left: 10px;
-}
-
 #about p {
   max-width: 40ch;
   font-size: 1.3rem;
 }
-
 #about #aboutInfo a {
   font-family: var(--roboto);
   font-size: 1.2rem;
