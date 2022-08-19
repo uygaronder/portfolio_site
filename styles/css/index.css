@@ -4,6 +4,10 @@
   padding-left: 10px;
 }
 
+canvas {
+  display: block;
+}
+
 #hero {
   height: 100vh;
   width: 100vw;
@@ -48,17 +52,13 @@
           animation: scrollIndicator 2s infinite;
 }
 
-canvas {
-  display: block;
-}
-
 #about {
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: var(--fontColor);
   position: relative;
-  min-height: 60vh;
+  min-height: 80vh;
   padding: 0 10%;
 }
 #about p {
@@ -70,30 +70,45 @@ canvas {
   font-size: 1.2rem;
   color: var(--actionColor);
 }
-
-@-webkit-keyframes scrollIndicator {
-  0% {
-    transform: translateY(3px);
-  }
-  50% {
-    transform: translateY(14px);
-  }
-  100% {
-    transform: translateY(3px);
-  }
+#about #skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+#about #skills .skill {
+  margin: 5px;
+  padding: 10px;
+  box-shadow: 0px 0px 5px 1px #000000 inset;
+  border-radius: 4px;
+  width: 84px;
+  transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+#about #skills .skill .skillname {
+  transition: 0.2s ease;
+  opacity: 0;
+  text-align: center;
+}
+#about #skills .skill .skillname p {
+  height: 0px;
+  font-size: 0.75rem;
+  transition: 0.2s ease;
+}
+#about #skills .skill img {
+  filter: invert(1);
+  height: 64px;
+  width: 64px;
+}
+#about #skills .skill:hover {
+  box-shadow: 0px 0px 10px 1px #494949 inset;
+}
+#about #skills .skill:hover .skillname {
+  display: inline;
+  opacity: 1;
+}
+#about #skills .skill:hover .skillname p {
+  height: 2ch;
 }
 
-@keyframes scrollIndicator {
-  0% {
-    transform: translateY(3px);
-  }
-  50% {
-    transform: translateY(14px);
-  }
-  100% {
-    transform: translateY(3px);
-  }
-}
 #projects {
   display: flex;
   flex-direction: column;
@@ -143,7 +158,7 @@ canvas {
   box-shadow: 0px 0px 3px 0px #0a1e3a;
 }
 #projects .project .projectInfo .techs {
-  opacity: 0.5;
+  opacity: 0.8;
   font-size: 0.95rem;
 }
 #projects .project .projectInfo .techs .tech {
@@ -153,7 +168,7 @@ canvas {
   margin-top: 15px;
 }
 #projects .project .projectInfo .projectLinks a {
-  margin: 0 20px;
+  margin: 0 5px;
 }
 #projects .project .projectInfo .projectLinks img {
   height: 24px;
@@ -224,7 +239,7 @@ canvas {
 }
 
 #contact {
-  margin: 30px 10%;
+  margin: 50px 10%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -243,4 +258,88 @@ canvas {
   font-size: 1.2rem;
   margin-top: 15px;
   color: white;
+}
+
+@-webkit-keyframes scrollIndicator {
+  0% {
+    transform: translateY(3px);
+  }
+  50% {
+    transform: translateY(14px);
+  }
+  100% {
+    transform: translateY(3px);
+  }
+}
+
+@keyframes scrollIndicator {
+  0% {
+    transform: translateY(3px);
+  }
+  50% {
+    transform: translateY(14px);
+  }
+  100% {
+    transform: translateY(3px);
+  }
+}
+@-webkit-keyframes fadeFromLeft {
+  0% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes fadeFromLeft {
+  0% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeFromRight {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes fadeFromRight {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes fadeFromRight {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .fade-left-animation {
+    -webkit-animation: fadeFromLeft 1s 1;
+            animation: fadeFromLeft 1s 1;
+  }
+  .fade-left-animation {
+    -webkit-animation: fadeFromLeft 1s 1;
+            animation: fadeFromLeft 1s 1;
+  }
 }/*# sourceMappingURL=index.css.map */

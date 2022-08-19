@@ -11,6 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+    <script src="https://kit.fontawesome.com/19a4fd8ab0.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -32,10 +33,10 @@
         <div><span>Uygar Onder</span></div>
 
         <div id="links">
-            <a href="#home">Home</a>
-            <a href="#home">About</a>
-            <a href="#home">Projects</a>
-            <a href="#home">Contact</a>
+            <a id="homeButton">Home</a>
+            <a id="aboutButton">About</a>
+            <a id="projectsButton">Projects</a>
+            <a id="contactButton">Contact</a>
         </div>
     </nav>
 
@@ -51,13 +52,55 @@
             <a href="#contact">Lets Create Something Special</a>
         </div>
         <div id="skillsContainer">
-            <p>Some Technologies Im Familiar With</p>
+            <p>Some Technologies I'm Familiar With;</p>
             <div id="skills">
                 <div class="skill">
                     <img src="/res/svg/js.svg" alt="Javascript">
+                    <span class="skillname">
+                        <p>Javascript</p>
+                    </span>
                 </div>
                 <div class="skill">
-                    <img src="/res/svg/typescript.svg" alt="Javascript">
+                    <img src="/res/svg/typescript.svg" alt="Typescript">
+                    <span class="skillname">
+                        <p>Typescript</p>
+                    </span>
+                </div>
+                <div class="skill">
+                    <img src="/res/svg/react.svg" alt="React">
+                    <span class="skillname">
+                        <p>React</p>
+                    </span>
+                </div>
+                <div class="skill">
+                    <img src="/res/svg/node.svg" alt="NodeJS">
+                    <span class="skillname">
+                        <p>NodeJS</p>
+                    </span>
+                </div>
+                <div class="skill">
+                    <img src="/res/svg/mongodb.svg" alt="MongoDB">
+                    <span class="skillname">
+                        <p>MongoDB</p>
+                    </span>
+                </div>
+                <div class="skill">
+                    <img src="/res/svg/html.svg" alt="HTML">
+                    <span class="skillname">
+                        <p>HTML</p>
+                    </span>
+                </div>
+                <div class="skill">
+                    <img src="/res/svg/css.svg" alt="CSS">
+                    <span class="skillname">
+                        <p>CSS</p>
+                    </span>
+                </div>
+                <div class="skill">
+                    <img src="/res/svg/sass.svg" alt="Sass">
+                    <span class="skillname">
+                        <p>Sass</p>
+                    </span>
                 </div>
             </div>
         </div>
@@ -71,10 +114,9 @@
                     <span class="projectPrompt">Featured Project</span>
                     <span class="projectName">Bugsnack Bugtracker</span>
                     <span class="projectDescription">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati cumque suscipit sunt quam delectus
-                            esse nisi voluptatibus porro magnam! Blanditiis.</p>
+                        <p>A web application built for tracking bugs and issues. Built with teams in mind. Users can create teams and share bugs with each others.</p>
                         <br>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, quo?</p>
+                        <p>Built using React for the front end and ExpressJS for the back end.</p>
                     </span>
                     <span class="techs">
                         <span class="tech">React</span>
@@ -84,6 +126,7 @@
                         <span class="tech">PassportJS</span>
                     </span>
                     <span class="projectLinks">
+                        <a href=""><img src="./res/svg/more.svg" alt=""></a>
                         <a href=""><img src="./res/svg/github.svg" alt=""></a>
                         <a href=""><img src="./res/svg/out.svg" alt=""></a>
                     </span>
@@ -107,6 +150,7 @@
                         <span class="tech">PassportJS</span>
                     </span>
                     <span class="projectLinks">
+                        <a href=""><img src="./res/svg/more.svg" alt=""></a>
                         <a href=""><img src="./res/svg/github.svg" alt=""></a>
                         <a href=""><img src="./res/svg/out.svg" alt=""></a>
                     </span>

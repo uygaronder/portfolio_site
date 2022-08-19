@@ -1,3 +1,30 @@
+document.getElementById("homeButton").addEventListener("click", () => {
+    scrollToSection("hero");
+});
+document.getElementById("aboutButton").addEventListener("click", () => {
+    scrollToSection("about");
+});
+document.getElementById("projectsButton").addEventListener("click", () => {
+    scrollToSection("projects");
+});
+document.getElementById("contactButton").addEventListener("click", () => {
+    scrollToSection("contact");
+});
+
+function scrollToSection(section) {
+    document
+        .getElementById(section)
+        .scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+const observer = new IntersectionObserver((entries) => {
+    console.log(entries);
+});
+
+observer.observe(document.querySelector(".project"));
+
+// Hero Animation Stuff
+
 const gui = new dat.GUI();
 const world = {
     plane: {
