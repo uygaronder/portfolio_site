@@ -1,3 +1,5 @@
+// buttons and observer animations
+
 document.getElementById("homeButton").addEventListener("click", () => {
     scrollToSection("hero");
 });
@@ -17,11 +19,93 @@ function scrollToSection(section) {
         .scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
+const projects = document.querySelectorAll(".project");
+
 const observer = new IntersectionObserver((entries) => {
-    console.log(entries);
+    entries.forEach(
+        (entry) => {
+            entry.target.classList.toggle(
+                entry.target.classList.contains("anim-right")
+                    ? "fade-right-animation"
+                    : "fade-left-animation",
+                entry.isIntersecting
+            );
+            if (entry.isIntersecting) {
+                entry.target.classList.remove("invisible");
+                observer.unobserve(entry.target);
+            }
+        },
+        {
+            threshold: 1,
+        }
+    );
 });
 
-observer.observe(document.querySelector(".project"));
+projects.forEach((project) => {
+    observer.observe(project);
+});
+
+// mini projects image slider stuff
+
+const moreContainers = document.querySelectorAll(".moreContainer");
+moreContainers.forEach((container) => {
+    container.addEventListener("click", (e) => {
+        const toIgnore = [
+            "miniProjectImages",
+            "miniProjectInfo",
+            "miniOutLinks",
+        ];
+
+        let exit = true;
+        for (let div of e.path) {
+            if (
+                div.classList &&
+                toIgnore.some((item) =>
+                    Array.from(div.classList).includes(item)
+                )
+            ) {
+                exit = false;
+                break;
+            }
+        }
+
+        if (exit) {
+            document
+                .getElementsByTagName("body")[0]
+                .classList.remove("noScroll");
+            container.classList.add("noDisplay");
+        }
+    });
+});
+
+const miniImages = document.querySelectorAll(".miniImage");
+function deactivateOtherImages() {
+    miniImages.forEach((image) => image.classList.remove("imgActive"));
+}
+
+const projectMorePrompts = document.querySelectorAll(".morePrompt");
+projectMorePrompts.forEach((smallP) => {
+    smallP.addEventListener("click", () => {
+        deactivateOtherImages();
+        console.log(smallP.parentElement);
+        smallP.parentElement
+            .getElementsByClassName("moreContainer")[0]
+            .classList.remove("noDisplay");
+        document.getElementsByTagName("body")[0].classList.add("noScroll");
+    });
+});
+
+miniImages.forEach((image) => {
+    image.addEventListener("click", (e) => {
+        deactivateOtherImages();
+        e.target.classList.add("imgActive");
+        e.target.parentElement.getElementsByClassName("biggerImage").src =
+            e.target.src;
+        e.target.parentElement.parentElement.getElementsByClassName(
+            "biggerImage"
+        )[0].src = e.target.src;
+    });
+});
 
 // Hero Animation Stuff
 
