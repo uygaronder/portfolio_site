@@ -87,7 +87,19 @@ const projectMorePrompts = document.querySelectorAll(".morePrompt");
 projectMorePrompts.forEach((smallP) => {
     smallP.addEventListener("click", () => {
         deactivateOtherImages();
-        console.log(smallP.parentElement);
+        const imagesDiv = smallP.parentElement
+            .getElementsByClassName("moreContainer")[0]
+            .getElementsByClassName("projectMore")[0]
+            .getElementsByClassName("miniProjectImages")[0];
+
+        const previewImages =
+            imagesDiv.getElementsByClassName("imagesSmaller")[0];
+        imagesDiv.getElementsByClassName("biggerImage")[0].src =
+            previewImages.getElementsByClassName("miniImage")[0].src;
+        previewImages
+            .getElementsByClassName("miniImage")[0]
+            .classList.add("imgActive");
+
         smallP.parentElement
             .getElementsByClassName("moreContainer")[0]
             .classList.remove("noDisplay");
@@ -105,6 +117,61 @@ miniImages.forEach((image) => {
             "biggerImage"
         )[0].src = e.target.src;
     });
+});
+
+// hamburger menu stuff
+const hamburgerButton = document.getElementById("hamburgerButton");
+const mobileLinksContainer = document.getElementById("mobileLinksContainer");
+
+function toggleHamburgerMenu() {
+    const status = hamburgerButton.classList.contains("hamburgerActive");
+    if (!status) {
+        hamburgerButton.classList.add("hamburgerActive");
+        mobileLinksContainer.classList.add("mobileLinksActive");
+        document.getElementsByTagName("body")[0].classList.add("noScroll");
+    } else {
+        hamburgerButton.classList.remove("hamburgerActive");
+        mobileLinksContainer.classList.remove("mobileLinksActive");
+        document.getElementsByTagName("body")[0].classList.remove("noScroll");
+    }
+
+    // scroll down if hero section is visible
+    const heroDiv = document.getElementById("hero").getBoundingClientRect();
+    if (heroDiv.bottom > 0) {
+        document
+            .getElementById("about")
+            .scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+}
+
+document
+    .getElementById("mobileLinksContainer")
+    .addEventListener("click", (e) => {
+        console.log();
+        if (e.target.id == "mobileLinksContainer") {
+            toggleHamburgerMenu();
+        }
+    });
+
+hamburgerButton.addEventListener("click", () => {
+    toggleHamburgerMenu();
+});
+
+document.getElementById("homeButtonM").addEventListener("click", () => {
+    toggleHamburgerMenu();
+    scrollToSection("hero");
+});
+document.getElementById("aboutButtonM").addEventListener("click", () => {
+    toggleHamburgerMenu();
+    scrollToSection("about");
+});
+document.getElementById("projectsButtonM").addEventListener("click", () => {
+    toggleHamburgerMenu();
+    scrollToSection("projects");
+});
+document.getElementById("contactButtonM").addEventListener("click", () => {
+    toggleHamburgerMenu();
+    scrollToSection("contact");
 });
 
 // Hero Animation Stuff
