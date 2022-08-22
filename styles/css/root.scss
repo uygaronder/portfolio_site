@@ -62,7 +62,7 @@ nav{
     z-index: 99;
     background-color: inherit;
     align-items: center;
-    z-index: 99999;
+    z-index: 999;
 }
 
 nav > #links{
@@ -196,4 +196,6 @@ nav a{
     .mobileLinksActive{
         display: block;
     }
+
+
 }

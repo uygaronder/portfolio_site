@@ -539,4 +539,28 @@ canvas {
   #socialLinks {
     display: none;
   }
+  #smallerProjects {
+    margin: 0 10%;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #smallerProjects .smallerProject {
+    cursor: pointer;
+    position: relative;
+    width: 180px;
+    height: 180px;
+  }
+  #smallerProjects .smallerProject .morePrompt {
+    width: 100%;
+    height: 100%;
+  }
+  #smallerProjects .smallerProject .moreContainer {
+    height: 100vh;
+    width: 100%;
+  }
+  #smallerProjects .smallerProject .moreContainer .miniProjectImages .biggerImage {
+    min-width: auto;
+  }
 }/*# sourceMappingURL=index.css.map */
