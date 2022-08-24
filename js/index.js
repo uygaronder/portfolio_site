@@ -6,6 +6,9 @@ document.getElementById("homeButton").addEventListener("click", () => {
 document.getElementById("aboutButton").addEventListener("click", () => {
     scrollToSection("about");
 });
+document.getElementById("scrollContainer").addEventListener("click", () => {
+    scrollToSection("about");
+});
 document.getElementById("projectsButton").addEventListener("click", () => {
     scrollToSection("projects");
 });

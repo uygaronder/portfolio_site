@@ -66,6 +66,7 @@ canvas {
 #hero .scrollIndicator {
   -webkit-animation: scrollIndicator 2s infinite;
           animation: scrollIndicator 2s infinite;
+  cursor: pointer;
 }
 
 #about {
@@ -342,6 +343,7 @@ canvas {
 }
 #smallerProjects .smallerProject:hover .morePrompt {
   opacity: 1;
+  z-index: 99;
 }
 
 #contact {

@@ -1,0 +1,57 @@
+#project{
+    padding: 30px 10%;
+    #projectInfo{
+        display: flex;
+        justify-content: space-between;
+        #links{
+            img{
+                filter: brightness(0) invert(1);
+                height: 30px;
+                width: 30px;
+                margin-left: 12px;
+            }
+        }
+        
+    }
+    #images {
+        position: relative;
+        #biggerImage {
+            width: 100%;
+        }
+        #previewImages{
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            padding: 0 10px;
+            
+            img{
+                object-fit: cover;
+                border: 1px solid black;
+                opacity: .5;
+                cursor: pointer;
+                transition: .2s ease;
+                height: 80px;
+                width: 80px;
+            }
+            img:hover{
+                opacity: 1;
+            }
+            .imgActive{
+                opacity: 1;
+            }
+        }
+    }
+
+    #techContainer{
+        display: flex;
+        align-items: center;
+        #techs{
+            opacity: .6;
+            margin-left: 12px;
+        }
+    }
+
+    #description{
+        margin: 20px 0;
+    }
+}

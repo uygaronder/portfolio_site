@@ -1,0 +1,52 @@
+#project {
+  padding: 30px 10%;
+}
+#project #projectInfo {
+  display: flex;
+  justify-content: space-between;
+}
+#project #projectInfo #links img {
+  filter: brightness(0) invert(1);
+  height: 30px;
+  width: 30px;
+  margin-left: 12px;
+}
+#project #images {
+  position: relative;
+}
+#project #images #biggerImage {
+  width: 100%;
+}
+#project #images #previewImages {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  padding: 0 10px;
+}
+#project #images #previewImages img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 1px solid black;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: 0.2s ease;
+  height: 80px;
+  width: 80px;
+}
+#project #images #previewImages img:hover {
+  opacity: 1;
+}
+#project #images #previewImages .imgActive {
+  opacity: 1;
+}
+#project #techContainer {
+  display: flex;
+  align-items: center;
+}
+#project #techContainer #techs {
+  opacity: 0.6;
+  margin-left: 12px;
+}
+#project #description {
+  margin: 20px 0;
+}/*# sourceMappingURL=project.css.map */

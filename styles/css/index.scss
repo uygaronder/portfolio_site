@@ -68,6 +68,7 @@ canvas {
     }
     .scrollIndicator {
         animation: scrollIndicator 2s infinite;
+        cursor: pointer;
     }
 }
 
@@ -359,6 +360,7 @@ canvas {
     .smallerProject:hover{
         .morePrompt{
             opacity: 1;
+            z-index: 99;
         }
     }
 }
