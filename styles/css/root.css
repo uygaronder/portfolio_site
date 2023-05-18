@@ -56,7 +56,6 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 20px 15px;
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   box-shadow: 0 7px 9px -7px black;
@@ -184,5 +183,8 @@ nav a {
   }
   .mobileLinksActive {
     display: block;
+  }
+  ::-webkit-scrollbar {
+    display: none;
   }
 }/*# sourceMappingURL=root.css.map */

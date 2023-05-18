@@ -1,7 +1,6 @@
 .title {
   font-family: var(--oswald);
   font-size: 3rem;
-  padding-left: 10px;
 }
 
 canvas {
@@ -22,6 +21,10 @@ canvas {
 
 .scroll {
   overflow-y: scroll;
+}
+
+section {
+  padding: 0 10%;
 }
 
 #hero {
@@ -64,8 +67,7 @@ canvas {
   left: 48%;
 }
 #hero .scrollIndicator {
-  -webkit-animation: scrollIndicator 2s infinite;
-          animation: scrollIndicator 2s infinite;
+  animation: scrollIndicator 2s infinite;
   cursor: pointer;
 }
 
@@ -75,8 +77,7 @@ canvas {
   align-items: center;
   color: var(--fontColor);
   position: relative;
-  min-height: 80vh;
-  padding: 0 10%;
+  min-height: 50vh;
 }
 #about p {
   max-width: 40ch;
@@ -127,7 +128,6 @@ canvas {
 }
 
 #socialLinks {
-  position: -webkit-sticky;
   position: sticky;
   top: 80vh;
   height: 100%;
@@ -167,19 +167,21 @@ canvas {
   align-items: center;
   color: var(--fontColor);
   position: relative;
-  min-height: 60vh;
-  padding: 0 10%;
+  min-height: 50vh;
+  flex: 1;
 }
 #projects .title {
   align-self: flex-start;
   margin-bottom: 25px;
+}
+#projects #projectsContainer {
+  width: 100%;
 }
 #projects .project {
   display: flex;
   width: 100%;
   min-height: 300px;
   margin-bottom: 10vw;
-  max-width: 1200px;
   align-items: center;
 }
 #projects .project .projectInfo {
@@ -197,7 +199,7 @@ canvas {
 #projects .project .projectInfo .projectName {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 25px;
+  margin-bottom: 8px;
 }
 #projects .project .projectInfo .projectDescription {
   padding: 15px;
@@ -255,15 +257,16 @@ canvas {
 }
 
 #smallerProjects {
-  margin: 0 10%;
   margin-top: 80px;
   display: flex;
 }
 #smallerProjects .smallerProject {
   cursor: pointer;
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
+  min-width: 200px;
+  overflow: hidden;
 }
 #smallerProjects .smallerProject .morePrompt {
   position: absolute;
@@ -342,6 +345,8 @@ canvas {
   filter: brightness(0) invert(1);
 }
 #smallerProjects .smallerProject:hover .morePrompt {
+  height: 100%;
+  width: 100%;
   opacity: 1;
   z-index: 99;
 }
@@ -379,18 +384,6 @@ canvas {
   color: black;
 }
 
-@-webkit-keyframes scrollIndicator {
-  0% {
-    transform: translateY(3px);
-  }
-  50% {
-    transform: translateY(14px);
-  }
-  100% {
-    transform: translateY(3px);
-  }
-}
-
 @keyframes scrollIndicator {
   0% {
     transform: translateY(3px);
@@ -402,29 +395,9 @@ canvas {
     transform: translateY(3px);
   }
 }
-@-webkit-keyframes fadeFromLeft {
-  0% {
-    transform: translateX(-200px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
 @keyframes fadeFromLeft {
   0% {
     transform: translateX(-200px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-@-webkit-keyframes fadeFromRight {
-  0% {
-    transform: translateX(200px);
     opacity: 0;
   }
   100% {
@@ -444,12 +417,10 @@ canvas {
 }
 @media (prefers-reduced-motion: no-preference) {
   .fade-left-animation {
-    -webkit-animation: fadeFromLeft 0.5s 1;
-            animation: fadeFromLeft 0.5s 1;
+    animation: fadeFromLeft 0.5s 1;
   }
   .fade-right-animation {
-    -webkit-animation: fadeFromRight 0.5s 1;
-            animation: fadeFromRight 0.5s 1;
+    animation: fadeFromRight 0.5s 1;
   }
 }
 @media screen and (min-width: 1400px) {
@@ -458,15 +429,29 @@ canvas {
   }
   section {
     margin: auto;
-    max-width: 1500px;
+    max-width: 1400px;
   }
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1400px) {
+  section {
+    padding: 0 50px;
+  }
+  #smallerProjects {
+    padding: 0;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 1000px) {
   body {
     overflow-X: hidden;
   }
+  section {
+    font-size: 1rem;
+    padding: 0 10%;
+  }
   #hero {
-    max-width: 100vw;
+    padding: 0;
+    width: 100vw;
   }
   #hero #heroTexts {
     padding: 30px;
@@ -495,17 +480,27 @@ canvas {
     font-size: 1.2rem;
     color: var(--actionColor);
   }
+  #about #skillsContainer {
+    margin: 25px 0;
+  }
+  #about #skillsContainer > p {
+    text-align: start;
+  }
   #about #skills {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 5px 0;
   }
   #about #skills .skill {
     margin: 5px;
     padding: 10px;
     box-shadow: 0px 0px 5px 1px #000000 inset;
     border-radius: 4px;
-    width: 84px;
+    width: 70px;
     transition: 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     transition: 0.2s ease;
   }
   #about #skills .skill .skillname {
@@ -520,8 +515,8 @@ canvas {
   }
   #about #skills .skill img {
     filter: invert(1);
-    height: 64px;
-    width: 64px;
+    height: 32px;
+    width: 32px;
   }
   #about #skills .skill:hover {
     box-shadow: 0px 0px 10px 1px #494949 inset;
@@ -533,6 +528,9 @@ canvas {
   #about #skills .skill:hover .skillname p {
     height: 2ch;
   }
+  #projects > p {
+    margin: 10px 0;
+  }
   #contact p {
     text-align: center;
     width: 40ch;
@@ -542,7 +540,7 @@ canvas {
     display: none;
   }
   #smallerProjects {
-    margin: 0 10%;
+    padding: 100px;
     margin-top: 80px;
     display: flex;
     justify-content: center;

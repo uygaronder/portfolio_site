@@ -197,5 +197,8 @@ nav a{
         display: block;
     }
 
+    ::-webkit-scrollbar {
+        display: none;
+    }
 
 }

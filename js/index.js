@@ -59,7 +59,12 @@ moreContainers.forEach((container) => {
             "miniOutLinks",
         ];
 
-        let exit = true;
+        let exit = false;
+        console.log(Array.from(e.target.classList).includes("moreContainer"));
+        if (Array.from(e.target.classList).includes("moreContainer")) {
+            exit = true;
+        }
+        /*
         for (let div of e.path) {
             if (
                 div.classList &&
@@ -71,7 +76,7 @@ moreContainers.forEach((container) => {
                 break;
             }
         }
-
+        */
         if (exit) {
             document
                 .getElementsByTagName("body")[0]
@@ -179,7 +184,7 @@ document.getElementById("contactButtonM").addEventListener("click", () => {
 
 // Hero Animation Stuff
 
-const gui = new dat.GUI();
+//const gui = new dat.GUI();
 const world = {
     plane: {
         height: 20,
