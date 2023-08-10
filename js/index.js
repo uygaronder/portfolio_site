@@ -15,6 +15,9 @@ document.getElementById("projectsButton").addEventListener("click", () => {
 document.getElementById("contactButton").addEventListener("click", () => {
     scrollToSection("contact");
 });
+document.getElementById("ctaButton").addEventListener("click", () => {
+    scrollToSection("contact");
+});
 
 function scrollToSection(section) {
     document
