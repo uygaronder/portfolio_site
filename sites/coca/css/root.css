@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;500;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --inter: "Inter",
+      sans-serif;
+  --backWhite: #fcfaf8;
+  --backGray: #27292d;
+  --accentBlack: #0f0f0f;
+  --buttonBlack: #1d1c21;
+  --fontBlack: #101010;
+  --basicPadding:100px 80px;
+  --basicPadding:100px 10%;
+  --basicPadding2:20px 10%;
+}/*# sourceMappingURL=root.css.map */

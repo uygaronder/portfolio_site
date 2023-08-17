@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+:root {
+  --openSans: "Open Sans", sans-serif;
+  --backBlack: #010307;
+  --accentRed: #fe1212;
+  --accentWhite: #fff;
+  --accentGray: #2a2a2a;
+  --accentBlack: #090b0f;
+  --accentBlackLighter: #1f1f22;
+  --gradientBackground: rgb(255, 128, 128);
+  --redGradient: linear-gradient(157deg, rgba(255, 98, 98, 1) 0%, rgba(254, 18, 18, 1) 90%);
+  --basicPadding: 25px 75px;
+  --heroImageGradient:radial-gradient(circle, rgba(255, 255, 255, 0.00043767507002800965) 10%, rgba(1, 3, 7, 0.8855917366946778) 40%, rgba(1, 3, 7, 1) 75%);
+  --accordionGradient: linear-gradient(90deg, rgba(1, 3, 7, 1) 0%, rgba(255, 255, 255, 0.00043767507002800965) 80%);
+  --logoSize: 2.5rem;
+  --logoBottom: 8px;
+  --logoDotSize: 8px;
+  --logoRight: -10px;
+  --titleSloganSize: 2rem;
+  --titleTextSize: 5.5rem;
+  --heroP: 1.5rem;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  line-height: 1.2;
+}
+
+button {
+  font-family: var(--openSans);
+}
+
+a {
+  text-decoration: none;
+  color: var(--accentWhite);
+}
+
+@media screen and (max-width: 900px) {
+  :root {
+    --basicPadding:25px 20px;
+    --logoSize: 1.5rem;
+    --logoBottom: 4px;
+    --logoRight: -5px;
+    --logoDotSize: 5px;
+    --titleSloganSize: 1rem;
+    --titleTextSize: 2rem;
+    --heroP: 1rem;
+  }
+}/*# sourceMappingURL=root.css.map */

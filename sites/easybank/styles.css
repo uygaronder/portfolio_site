@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
+
+
+/* || Setup */ 
+img{
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+:root {
+    --DarkBlue: hsl(233, 26%, 24%);
+    --LimeGreen: hsl(136, 65%, 51%);
+    --BrightCyan: hsl(192, 70%, 51%);
+
+    --GrayishBlue: hsl(233, 8%, 62%);
+    --LightGrayishBlue: hsl(220, 16%, 96%);
+    --VeryLightGray: hsl(0, 0%, 98%);
+    --White: hsl(0, 0%, 100%);
+}
+
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Public Sans', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.4;
+    overflow-x: hidden;
+}
+
+/* || General */
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+h1,h2,h3,h4{
+    opacity: .8;
+    font-weight: 400;
+    transition: .2s ease;
+}
+
+h1{font-size: 2rem;}
+h2{font-size: 1.8rem;}
+h3{font-size: 1.5rem;}
+h4{font-size: 1.3rem;}
+
+p{
+    font-weight: 300;
+    font-size: .9rem;
+    color: var(--GrayishBlue);
+    line-height: 1.6;
+}
+
+button{
+    font-family: 'Public Sans', sans-serif;
+    color: white;
+    padding: 8px 20px;
+    font-size: .9rem;
+    font-weight: 300;
+    border: none;
+    border-radius: 20px;
+    background: rgb(53,221,97);
+    background: linear-gradient(90deg, rgba(53,221,97,1) 0%, rgba(43,183,218,1) 100%);
+    transition: .2s ease;
+}
+
+button:hover{
+    cursor: pointer;
+    opacity: .8;
+}
+
+
+/* || Header */
+
+header{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    background-color: var(--White);
+    width: 100vw;
+    top: 0;
+    align-items: center;
+    z-index: 99;
+    padding: 15px 0;
+}
+
+header img{
+    display: flex;
+    padding-left: 15px;
+}
+
+/* Hamburger */
+
+.hamburger{
+    padding-right: 15px;
+}
+
+.hamburgerShadow{
+    position: absolute;
+    content: " ";
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    pointer-events: none
+}
+
+.shadowToggle{
+    top: 50px;
+    background-color: #000;
+    opacity: .6;
+}
+
+.hamburger > span{
+    display: block;
+    height: 1px;
+    width: 22px;
+    background-color: gray;
+    margin-top: 3px;
+    transition: .2s ease;
+}
+
+.hamburger > span:first-of-type{    
+    margin-top: 0px;
+}
+
+.hamburgerMenu{
+    display: none;
+    z-index: 999;
+}
+
+.hamburgerMenu ul li{
+    margin-top: 10px;
+    opacity: .7;
+}
+
+.hMenuContainer{
+    position: absolute;
+    
+}
+
+div.open{
+    display: block;
+    position: absolute;
+    width: 80%;
+    top: 60px;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 4px;
+    background-color: white;
+    margin: 0 10%;
+}
+
+.hToggle > span:nth-child(1){
+    transform: rotate(45deg);
+}
+
+.hToggle > span:nth-child(2){
+    opacity: 0;
+}
+
+.hToggle > span:nth-child(3){
+    transform: rotate(-45deg);
+    margin-top: -5px;
+}
+
+header button{
+    display: none;
+}
+
+/* || Welcome Section */
+
+.welcome{
+    top: 0;
+    background-color: var(--VeryLightGray);
+}
+
+.welcome .imgBack{
+    background: url(resources/bg-intro-mobile.svg) no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.welcome img{
+    width: 95%;
+    margin-top: -50px;
+}
+
+.welcomeText{
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.welcomeText > *{
+    margin-bottom: 20px;
+}
+
+/* || Perks Section */
+
+.perksSec{
+    background-color: var(--LightGrayishBlue);
+    padding: 60px 7%;
+    text-align: center;
+    
+}
+
+.perk > *{
+    margin-top: 20px;
+}
+
+/* || Articles Section */
+
+.articles{
+    background-color: var(--VeryLightGray);
+    padding: 60px 7%;
+}
+
+.articles img{
+    min-width: 100%;
+}
+
+.articles > a:hover h4{
+    color: var(--BrightCyan);
+}
+
+.articles > h2{
+    text-align: center;
+    margin: 20px 0;
+}
+
+.article{
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.author{
+    font-size: .75rem;
+}
+
+.article > div{
+    margin: 20px 10%;
+    margin-bottom: 30px;
+}
+
+/* || Footer */
+
+footer{
+    background-color: #2d314e;
+    text-align: center;
+    padding: 30px 0;
+}
+
+footer ul li{
+    margin: 15px 0;
+}
+
+.links{
+    font-size: .9rem;
+    font-weight: 300;
+}
+
+.social{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 30%;
+}
+
+footer a{
+    color: white;
+    transition: .2s ease;
+}
+
+footer a:hover{
+    color: var(--BrightCyan);
+}
+
+footer > div:last-of-type > *{
+    margin-top: 20px;
+}
+
+@media screen and (min-width: 750px){
+    h1{font-size: 3rem;}
+    h2{font-size: 2rem;}
+    h3{font-size: 1.7rem;}
+    h4{font-size: 1.3rem;}
+    p{font-size: 1rem;}
+
+    /* || Desktop Header */
+
+    header{
+        justify-content: space-around;
+    }
+    
+    .hamburger{
+        display: none;
+    }
+    
+    .hamburgerMenu{
+        display: inline;
+        height: 100%;
+    }
+
+    .hamburgerMenu ul{
+        display: flex;
+    }
+    
+    .hamburgerMenu ul > li{
+        padding: 0 10px;
+        font-size: .9rem;
+        margin: 0;
+        opacity: .4;
+        position: relative;
+        height: 100%;
+    }
+    
+    .hamburgerMenu ul > li:hover{
+        opacity: 1;
+    }
+    
+    .hamburgerMenu ul > li a::before{
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 15px; right: 0; bottom: 0; left: 0;
+        background: rgb(53,221,97);
+        background: linear-gradient(90deg, rgba(53,221,97,1) 0%, rgba(43,183,218,1) 100%);
+        
+        z-index: -1;
+        transition: transform .1s ease;
+      }
+
+    .hamburgerMenu ul > li a::before{
+        transform: scaleX(0);
+        transform-origin: bottom right;
+    }
+
+    .hamburgerMenu ul > li a:hover::before{
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+    header button{
+        display: inline;
+        margin-right: 3%;
+    }
+    
+    /* || Desktop Welcome Section */
+
+    .welcome{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    
+    .welcome .imgBack{
+        background: url(resources/bg-intro-desktop.svg) no-repeat;
+        background-size: 180%;
+    }
+    
+    .welcome img{
+        position: relative;
+        width: 150%;
+        right: -100px;
+        bottom: -100px;
+    }
+    
+    .welcomeText{
+        width: 25%;
+        padding: 0 15%;
+        margin: auto;
+        text-align: start;
+    }
+    
+    .welcomeText > *{
+        margin-bottom: 20px;
+    }
+
+    /* || Desktop Perks Section */
+
+    .perksSec{
+        text-align: start;
+        
+    }
+
+    .why{
+        width: 40%;
+    }
+
+    .perks{
+        display: flex;
+        margin: 20px 0;
+    }
+
+    .perk{
+        margin: 30px;
+    }
+
+    .perk > *{
+        margin-top: 20px;
+    }
+
+    /* || Desktop Articles Section */
+
+    .articles{
+        text-align: start;
+    }
+
+    .AList{
+        display: flex;
+    }
+
+    .articles h2{
+        margin: 30px;
+    }
+
+    .article{
+        margin: 0 30px;
+    }
+
+    .articles img{
+        width: 100%;
+        max-height: 240px;
+    }
+    
+    /* || Desktop Footer */
+
+    footer{
+        display: flex;
+        text-align: start;
+        justify-content: space-around;
+    }
+    
+    
+    .social{
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0;
+    }
+
+    .soclialCont{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+    }
+    
+    .footer1{
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+        align-items: center;
+    }
+    
+    footer > div:last-of-type > *{
+        margin-top: 20px;
+    }
+}

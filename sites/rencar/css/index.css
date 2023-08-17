@@ -1,0 +1,544 @@
+body {
+  font-family: var(--openSans);
+  background-color: var(--backBlack);
+  color: white;
+  overflow-x: hidden;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--basicPadding);
+  align-items: center;
+}
+nav .logo {
+  display: flex;
+  font-weight: 700;
+  font-size: var(--logoSize);
+  position: relative;
+}
+nav .logo .logoDot {
+  position: absolute;
+  right: var(--logoRight);
+  bottom: var(--logoBottom);
+  height: var(--logoDotSize);
+  width: var(--logoDotSize);
+  display: flex;
+  background: var(--redGradient);
+}
+nav a {
+  margin: 0 5px;
+}
+nav button {
+  background: var(--redGradient);
+  color: var(--accentWhite);
+  border: none;
+  padding: 14px;
+  font-size: 1rem;
+  border-radius: 3px;
+  font-weight: 700;
+}
+nav .mobileLinks, nav #hamburgerButton, nav #mobileLinksCheck {
+  display: none;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+}
+.title .titleSlogan {
+  background: var(--redGradient);
+  width: -moz-max-content;
+  width: max-content;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: var(--titleSloganSize);
+  letter-spacing: 1.25ch;
+  margin-bottom: 25px;
+}
+.title .titleText {
+  font-size: var(--titleTextSize);
+  font-weight: 700;
+  line-height: 0.75;
+}
+.title .titleText p {
+  padding-left: 5.2ch;
+}
+
+#hero {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px);
+  padding: var(--basicPadding);
+  position: relative;
+  overflow: hidden;
+}
+#hero #heroImageContainer {
+  position: absolute;
+  top: 0;
+  left: 45%;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: flex;
+}
+#hero #heroImageContainer #imageLayer {
+  display: flex;
+  align-self: center;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: var(--heroImageGradient);
+  position: absolute;
+  z-index: -2;
+}
+#hero #heroImageContainer #heroImage {
+  background-repeat: no-repeat;
+  display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 100%;
+  z-index: -10;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 110px 100px var(--backBlack);
+}
+#hero .heroUpper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+}
+#hero .heroDesc {
+  flex: 0.3;
+  width: 23ch;
+  font-size: var(--heroP);
+}
+
+#carCarousels .carCarousel {
+  font-size: 5rem;
+  font-weight: 700;
+  display: flex;
+}
+#carCarousels .carCarousel .carousel {
+  animation: scrollCars 15s infinite linear;
+  display: flex;
+}
+#carCarousels .carCarousel .carousel .item {
+  box-sizing: content-box;
+  background: var(--redGradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-left: 40px;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+#carCarousels .carCarousel .carousel .item::before {
+  content: "";
+  background-color: white;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  margin-right: 35px;
+}
+#carCarousels .carCarousel .carousel .item:hover {
+  -webkit-text-fill-color: var(--backBlack);
+  -webkit-text-stroke: 5px transparent;
+  animation-play-state: paused;
+}
+#carCarousels .carCarousel .carCarousel2 {
+  animation: scrollCars 13.5s infinite linear;
+}
+
+#features {
+  margin: 40px 0;
+  padding: var(--basicPadding);
+}
+#features .featuresUpper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#features .featuresUpper .featuresDesc {
+  font-size: 1.5rem;
+  width: 30ch;
+  opacity: 0.6;
+}
+#features .featureBoxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  margin-top: 25px;
+}
+#features .featureBoxes .featureBox {
+  padding: 20px;
+  background-color: var(--accentBlack);
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+}
+#features .featureBoxes .featureBox .featureTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+#features .featureBoxes .featureBox .featureDesc {
+  font-size: 1.5rem;
+  opacity: 0.5;
+}
+
+#accordionContainer {
+  padding: var(--basicPadding);
+  display: flex;
+  padding-right: 0;
+  position: relative;
+  overflow: hidden;
+}
+#accordionContainer .accordion {
+  margin-top: 40px;
+}
+#accordionContainer .accordion input {
+  display: none;
+}
+#accordionContainer .accordion .accordionItem {
+  padding: 15px;
+  border-radius: 8px;
+  padding: 25px 40px;
+  transition: 0.2s ease;
+  width: 50vw;
+  margin: 15px 0;
+}
+#accordionContainer .accordion .accordionItem .accordionUpper {
+  display: flex;
+  max-width: 60vw;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+#accordionContainer .accordion .accordionItem .accordionUpper .accordionTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+#accordionContainer .accordion .accordionItem .accordionUpper .accordionButton {
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 50px;
+  width: 50px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+#accordionContainer .accordion .accordionItem .accordionUpper .accordionButton img {
+  filter: invert(1);
+  transform: rotate(180deg);
+  transition: 0.2s ease;
+  margin: auto;
+}
+#accordionContainer .accordion .accordionItem .accordionText {
+  font-size: 1.25rem;
+  display: none;
+}
+#accordionContainer .accordion input:checked ~ .accordionItem {
+  border: 0.5px solid var(--accentGray);
+  background-color: var(--accentBlack);
+}
+#accordionContainer .accordion input:checked ~ .accordionItem .accordionButton {
+  background-color: var(--accentBlackLighter);
+  border: 1px solid var(--accentGray);
+}
+#accordionContainer .accordion input:checked ~ .accordionItem .accordionButton img {
+  transform: rotate(0);
+}
+#accordionContainer .accordion input:checked ~ .accordionItem .accordionText {
+  display: block;
+}
+#accordionContainer .imageContainer {
+  position: absolute;
+  right: 0;
+  z-index: -19;
+}
+#accordionContainer .imageContainer img {
+  filter: grayscale(1);
+  height: 100vh;
+  z-index: 0;
+}
+#accordionContainer .imageContainer .accordionGradient {
+  background: var(--accordionGradient);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+}
+
+footer {
+  padding: var(--basicPadding);
+  margin: 25px 0;
+}
+footer .footerLinks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+footer .footerLinks .footerLinkRed {
+  font-weight: 700;
+  background: var(--redGradient);
+  width: -moz-max-content;
+  width: max-content;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+footer .footerLinks .footerLink {
+  margin: 8px 0;
+  opacity: 0.6;
+  cursor: pointer;
+}
+footer .footerLinks .footerLinkTab {
+  display: flex;
+  flex-direction: column;
+}
+footer .divider {
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: var(--accentGray);
+  margin: 30px 0;
+}
+footer .footerDown {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .footerDown .logo {
+  display: flex;
+  height: -moz-max-content;
+  height: max-content;
+  position: relative;
+}
+footer .footerDown .logo p {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+footer .footerDown .logo .dot {
+  height: 8px;
+  width: 8px;
+  position: absolute;
+  right: -10px;
+  bottom: 8px;
+  background: var(--redGradient);
+  display: flex;
+  margin-top: auto;
+}
+footer .footerDown .copyright {
+  display: flex;
+  align-items: center;
+  opacity: 0.5;
+  text-align: center;
+  margin: 30px 0;
+}
+footer .footerDown .copyright img {
+  height: 18px;
+  width: 18px;
+}
+footer .footerDown .socialLinks {
+  display: flex;
+  height: -moz-max-content;
+  height: max-content;
+}
+footer .footerDown .socialLinks a {
+  margin: 0 5px;
+  background: var(--redGradient);
+  width: -moz-max-content;
+  width: max-content;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+footer .footerDown .socialLinks a img {
+  filter: invert(1);
+}
+
+@keyframes scrollCars {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@media screen and (max-width: 900px) {
+  nav .links, nav > button {
+    display: none;
+  }
+  nav #hamburgerButton {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+  }
+  nav #hamburgerButton span {
+    transition: 0.2s ease;
+    height: 2px;
+    width: 25px;
+    background-color: var(--accentWhite);
+    display: block;
+    margin-bottom: 5px;
+  }
+  nav #hamburgerButton span:nth-of-type(2) {
+    width: 20px;
+    margin-left: auto;
+  }
+  nav #hamburgerButton span:nth-of-type(3) {
+    width: 15px;
+    margin-left: auto;
+  }
+  nav #mobileLinksCheck:checked ~ #hamburgerButton span {
+    width: 25px;
+  }
+  nav #mobileLinksCheck:checked ~ #hamburgerButton span:nth-of-type(1) {
+    transform: translateY(7px) rotate(40deg);
+  }
+  nav #mobileLinksCheck:checked ~ #hamburgerButton span:nth-of-type(2) {
+    width: 0;
+  }
+  nav #mobileLinksCheck:checked ~ #hamburgerButton span:nth-of-type(3) {
+    transform: translateY(-7px) rotate(-40deg);
+  }
+  nav .mobileLinks {
+    transition: 0.2s ease;
+    display: flex;
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    top: 0;
+    flex-direction: column;
+    padding: 80px 10px;
+  }
+  nav .mobileLinks a {
+    font-size: 1rem;
+    margin: 5px 0;
+    display: none;
+  }
+  nav #mobileLinksCheck:checked ~ .mobileLinks {
+    opacity: 1;
+    background-color: var(--accentBlack);
+    width: 150px;
+  }
+  nav #mobileLinksCheck:checked ~ .mobileLinks a {
+    display: block;
+  }
+  #carCarousels {
+    overflow: hidden;
+  }
+  #carCarousels .carCarousel {
+    font-size: 2.5rem;
+  }
+  #carCarousels .carCarousel .carousel .item::before {
+    content: "";
+    height: 10px;
+    width: 10px;
+    margin-right: 40px;
+  }
+  #features .featuresUpper .featuresDesc {
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+  #features .featureBoxes {
+    grid-template-columns: 1fr;
+  }
+  #features .featureBoxes .featureBox {
+    display: flex;
+    flex-direction: column;
+  }
+  #features .featureBoxes .featureBox .featureTitle {
+    font-size: 1.2rem;
+  }
+  #features .featureBoxes .featureBox .featureDesc {
+    font-size: 1rem;
+  }
+  #accordionContainer .accordion .accordionItem {
+    width: 90vw;
+  }
+  #accordionContainer .accordion .accordionItem .accordionUpper {
+    display: flex;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  #accordionContainer .accordion .accordionItem .accordionUpper .accordionTitle {
+    font-size: 1.1rem;
+  }
+  #accordionContainer .accordion .accordionItem .accordionText {
+    font-size: 1rem;
+    display: none;
+  }
+  #accordionContainer .accordion input:checked ~ .accordionItem {
+    border: 0.5px solid var(--accentGray);
+    background-color: var(--accentBlack);
+  }
+  #accordionContainer .accordion input:checked ~ .accordionItem .accordionButton {
+    background-color: var(--accentBlackLighter);
+    border: 1px solid var(--accentGray);
+  }
+  #accordionContainer .accordion input:checked ~ .accordionItem .accordionButton img {
+    transform: rotate(0);
+  }
+  #accordionContainer .accordion input:checked ~ .accordionItem .accordionText {
+    display: block;
+  }
+  #accordionContainer .imageContainer {
+    display: none;
+  }
+  footer .footerLinks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-size: 1rem;
+  }
+  footer .divider {
+    margin: 15px 0;
+  }
+  footer .footerDown {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  footer .footerDown .logo {
+    display: flex;
+    height: -moz-max-content;
+    height: max-content;
+    position: relative;
+  }
+  footer .footerDown .logo p {
+    font-size: var(--logoSize);
+    font-weight: 700;
+  }
+  footer .footerDown .logo .dot {
+    height: var(--logoDotSize);
+    width: var(--logoDotSize);
+    position: absolute;
+    right: var(--logoRight);
+    bottom: var(--logoBottom);
+  }
+  footer .footerDown .copyright {
+    margin: 0 8px;
+    font-size: 0.75rem;
+  }
+  footer .footerDown .copyright img {
+    height: 12px;
+    width: 12px;
+  }
+  footer .footerDown .socialLinks a img {
+    height: 12px;
+    width: 12px;
+    filter: invert(1);
+  }
+}/*# sourceMappingURL=index.css.map */

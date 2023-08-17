@@ -65,6 +65,17 @@ nav{
     align-items: center;
     z-index: 999;
     background-color: var(--navColor);
+    #logoContainer{
+        display: flex;
+        #navLogo{
+            img{
+                height: 30px;
+                width: 30px;
+                margin-right: 10px;
+                filter: brightness(0) invert(1);
+            }
+        }
+    }
 }
 
 nav > #links{

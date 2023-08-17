@@ -1,0 +1,508 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap');
+/*    font-family: 'Barlow', sans-serif;    */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&display=swap');
+/*  font-family: 'Fraunces', serif;     */
+
+/* General */
+
+:root{
+    --Softred: hsl(7, 99%, 70%);
+    --Yellow: hsl(51, 100%, 49%);
+    --Darkdesaturatedcyan: hsl(167, 40%, 24%);
+    --Darkblue: hsl(198, 62%, 26%);
+    --Darkmoderatecyan: hsl(168, 34%, 41%);
+
+    --Verydarkdesaturatedblue: hsl(212, 27%, 19%);
+    --Verydarkgrayishblue: hsl(213, 9%, 39%);
+    --Darkgrayishblue: hsl(232, 10%, 55%);
+    --Grayishblue: hsl(210, 4%, 67%);
+    --White: hsl(0, 0%, 100%);
+}
+
+*,*::after,*::before{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+}
+
+
+h1,h2,h3,h4{
+    font-family: 'Fraunces', serif;
+}
+
+p{
+    opacity: .6;
+}
+
+span{
+    font-family: 'Fraunces', serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: .9rem;
+}
+
+.two span:hover{
+    cursor: pointer;
+}
+
+span::after{
+    content: "";
+    display: block;
+    margin-top: -7px;
+    height: 8px;
+    width: 12ch;
+    opacity: .3;
+    transform-origin: left;
+    margin-left: calc(50% - 6ch);
+}
+
+
+
+.textTransform span::after{
+    background-color: var(--Yellow);
+}
+
+.textTransform span::after:hover{
+    background-color: yellow;
+}
+
+
+.textStand span::after{
+    background-color: var(--Softred);
+}
+
+
+/* || Header */
+
+header{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+header svg{
+    padding-left: 10px;
+}
+
+header svg{
+    padding-left: 20px;
+}
+
+.hamburger{
+    padding-right: 20px;
+    opacity: .5;
+}
+.hamburger:hover{
+    cursor: pointer;
+}
+
+header ul{
+    list-style: none;
+    position: absolute;
+    background-color: white;
+    top: 110%;
+    left: 20px;
+    width: calc(100% - 40px);
+    text-align: center;
+    padding: 30px 0;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: .2s ease;
+    z-index: 99;
+}
+
+body header .open{
+    transform: scale(1);
+}
+
+header ul::after{
+    content: " ";
+    position: absolute;
+    background-color: transparent;
+    top: -7%;
+    right: 0%;
+    display: block;
+    border:15px solid white;
+    border-color: transparent white white transparent;
+}
+
+header ul li a{
+    text-decoration: none;
+    color: black;
+    opacity: .6;
+    font-size: 1.1rem;
+    
+}
+
+header ul li{
+    padding: 20px 0;
+}
+
+header button{
+    font-family: 'Fraunces', serif;
+    border: none;
+    background-color: var(--Yellow);
+    padding: 15px 30px;
+    border-radius: 50px;
+}
+
+.text{
+    text-align: center;
+    padding: 10%;
+}
+.text > *{
+    margin-bottom: 20px;
+}
+
+/* || Section one */
+
+section[class = "one"]{
+    background: url(resources/mobile/image-header.jpg) no-repeat;
+    background-size: cover;
+    height: 65vh;
+    color: white;
+    text-align: center;
+}
+
+section[class = "one"] h1{
+    font-size: 2.6rem;
+    padding: 0 5%;
+    padding-top: 40%;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+section[class = "one"] svg{
+    padding-top: 20px;
+    transform: scale(.6);
+    transition: .3s ease;
+}
+
+section[class = "one"] svg{
+    padding-top: 30px;
+}
+
+section[class = "one"] svg:hover{
+    cursor: pointer;
+    padding-top: 30px;
+}
+
+/* || Section two */
+
+
+section[class = "two"] .image{
+    background-size: cover;
+    height: 35vh;
+    width: 100%;
+    display: block;
+}
+
+section[class = "two"] .transform{
+    background: url(resources/mobile/image-transform.jpg);
+    background-size: cover;
+}
+section[class = "two"] .stand{
+    background: url(resources/mobile/image-stand-out.jpg);
+    background-size: cover;
+}
+section[class = "two"] .design{
+    background: url(resources/mobile/image-graphic-design.jpg) no-repeat;
+    background-size: cover;
+    padding: 100px 0;
+    text-align: center;
+    color: var(--Darkdesaturatedcyan);
+    height: 300px;
+    
+}
+section[class = "two"] .photography{
+    background: url(resources/mobile/image-photography.jpg) no-repeat;
+    background-size: cover;
+    padding: 100px 0;
+    text-align: center;
+    color: var(--Darkblue);
+    height: 300px;
+    
+}
+
+section[class = "two"] .design h2{
+    margin-top: 70%;
+}
+section[class = "two"] .photography h2{
+    margin-top: 70%;
+}
+
+
+/* || Section testamonials */
+.testamonials{
+    padding: 10%;
+}
+
+.testamonials h3{
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-align: center;
+    opacity: .5;
+}
+
+.client{
+    text-align: center;
+    margin: 50px 0;
+}
+
+.client > *{
+    margin-top: 20px;
+}
+
+.client img{
+    border-radius: 50%;
+    height: 80px;
+}
+
+.client .name{
+    font-family: 'Fraunces', serif; 
+    opacity: 1;
+}
+
+.client .pos{
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+/* || Pics */
+
+.pics{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.milk{background: url(resources/mobile/image-gallery-milkbottles.jpg);}
+.orange{background: url(resources/mobile/image-gallery-orange.jpg);}
+.cone{background: url(resources/mobile/image-gallery-cone.jpg);}
+.sugar{background: url(resources/mobile/image-gallery-sugar-cubes.jpg);}
+
+.pic{
+    
+    background-size: cover;
+    height: 50vw;
+}
+
+/* || Footer */
+
+footer{
+    background-color: #90d4c5;
+    text-align: center;
+    padding: 60px 0;
+}
+
+footer ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+
+footer ul a{
+    text-decoration: none;
+    color: var(--Darkdesaturatedcyan);
+    
+}
+
+footer ul:first-of-type{opacity: .6;}
+
+footer ul:last-of-type{
+    margin-top: 60px;
+    padding: 0 20%;
+}
+
+footer ul li:hover a{
+    color: white;
+    filter: brightness(100);
+}
+
+/* || Desktop */
+
+@media screen and (min-width: 500px){
+    
+    .hamburger{
+        display: none;
+    }
+
+    header{
+        align-items: center;
+    }
+
+    header ul{
+        all: unset;
+        list-style: none;
+        display: flex;
+        align-items: center;
+    }
+    
+    
+    header ul::after{
+        display: none;
+    }
+    
+    header ul li a{
+        color: white;
+        opacity: 1;
+    }
+    
+    header ul li{
+        padding: 0 20px;
+    }
+    
+    header button{
+        background-color: var(--White);
+        transition: .2s ease;
+    }
+
+    header button:hover{
+        background-color: rgba(255, 255, 255, .5);
+        cursor: pointer;
+    }
+
+    /* || Desktop Section one */
+    
+    section[class = "one"]{
+        background: url(resources/desktop/image-header.jpg) no-repeat;
+        background-size: cover;
+        height: 100vh;
+    }
+    
+    section[class = "one"] h1{
+        padding-top: 20%;
+    }
+    
+    section[class = "one"] svg{
+        margin-top: 50px;
+        transform: scale(.8);
+        transition: .3s ease;
+    }
+    
+    section[class = "one"] svg:hover{
+        cursor: pointer;
+        margin-top: 60px;
+    }
+
+    /* || Desktop Section two */
+
+    .group{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    section[class = "two"] .image{
+        background-size: cover;
+        height: auto;
+        width: 100%;
+        display: block;
+    }
+
+    .text{
+        text-align: start;
+        padding: 200px ;
+    }
+
+    span::after{
+        content: "";
+        display: block;
+        margin-top: -7px;
+        height: 8px;
+        width: 12ch;
+        opacity: .3;
+        transform-origin: left;
+        margin-left: -12px;
+    }
+
+    .textTransform .image{
+        grid-column: 2;
+    }
+    
+    section[class = "two"] .transform{
+        background: url(resources/desktop/image-transform.jpg);
+        background-size: cover;
+        grid-row: 1;
+    }
+
+    
+    section[class = "two"] .stand{
+        background: url(resources/desktop/image-stand-out.jpg);
+        background-size: cover;
+    }
+    section[class = "two"] .design{
+        background: url(resources/desktop/image-graphic-design.jpg) no-repeat;
+        background-size: cover;
+    }
+    section[class = "two"] .photography{
+        background: url(resources/desktop/image-photography.jpg) no-repeat;
+        background-size: cover;
+    }
+    
+    section[class = "two"] .design h2{
+        margin-top: 70%;
+    }
+    section[class = "two"] .photography h2{
+        margin-top: 70%;
+    }
+    
+
+    .twotwo{
+        display: grid;
+        grid-template-columns: repeat(2 ,1fr);
+        height:max-content;
+    }
+    
+    .twotwo .textDesign .image h2{
+        margin-top: 40%;
+    }
+    .twotwo .textDesign .image p{
+        padding: 0 50px;
+    }
+
+    /* || Desktop Testamonials */
+
+    .testamonials > div{
+        display: flex;
+    }
+
+    .client{
+        padding: 0 30px;
+    }
+
+    /* || Desktop pics */
+
+    
+    .pics{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .milk{background: url(resources/desktop/image-gallery-milkbottles.jpg);}
+    .orange{background: url(resources/desktop/image-gallery-orange.jpg);}
+    .cone{background: url(resources/desktop/image-gallery-cone.jpg);}
+    .sugar{background: url(resources/desktop/image-gallery-sugarcubes.jpg);}
+
+    .pic{
+        
+        background-size: cover;
+        height: 25vw;
+    }
+
+    /* || Desktop Footer */
+
+    footer{
+        padding: 60px 35%;
+    }
+    
+    footer ul:last-of-type{
+        padding: 0 40%;
+    }
+}

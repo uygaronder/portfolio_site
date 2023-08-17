@@ -8,7 +8,7 @@
     <title>Uygar Onder</title>
     <link rel="stylesheet" href="styles/css/root.css">
     <link rel="stylesheet" href="styles/css/index.css">
-    <link rel="favicon" href="">
+    <link rel="icon" href="./res/img/favicon-32x32.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
@@ -31,13 +31,14 @@
     </section>
 
     <nav>
-        <div><span>Uygar Onder</span></div>
+        <div id="logoContainer"><span id="navLogo"><img src="./res/img/logo.png" alt=""></span><span>Uygar Onder</span></div>
 
         <div id="links">
             <a id="homeButton">Home</a>
             <a id="aboutButton">About</a>
             <a id="projectsButton">Projects</a>
             <a id="contactButton">Contact</a>
+            <a id="resumeButton" href="./res/UygarOnder.pdf">Resume</a>
         </div>
         <span id="hamburgerButton" class="hamburger">
             <span></span>
@@ -50,9 +51,10 @@
                 <a id="aboutButtonM">About</a>
                 <a id="projectsButtonM">Projects</a>
                 <a id="contactButtonM">Contact</a>
+                <a id="resumeButtonM" href="./res/UygarOnder.pdf">Resume</a>
                 <div id="mobileSocials">
                     <a href="mailto:uonder50@gmail.com"><img src="res/svg/mail.svg" alt=""></a>
-                    <a href="https://github.com/under4" target="_blank"><img src="res/svg/github.svg" alt=""></a>
+                    <a href="https://github.com/uygaronder" target="_blank"><img src="res/svg/github.svg" alt=""></a>
                 </div>
                 
             </div>
@@ -67,12 +69,12 @@
             <br>
             <p>I use Javascript, Typescript and React to create useful and interactive products.</p>
             <br>
-            <p>Currently focused on frontend frameworks as well as projects with positive people.</p>
+            <p>Currently focused on frontend frameworks as well as working with great people.</p>
             <br>
             <a id="ctaButton">Lets Create Something Special</a>
         </div>
         <div id="skillsContainer">
-            <p>Some Technologies I'm Familiar With;</p>
+            <p>Some stuff I use;</p>
             <div id="skills">
                 <div class="skill">
                     <img src="/res/svg/js.svg" alt="Javascript">
@@ -128,7 +130,7 @@
     </section>
     <div id="socialLinks">
         <div class="links">
-            <a href="https://github.com/under4" target="_blank"><img src="res/svg/github.svg" alt="Github"></a>
+            <a href="https://github.com/uygaronder" target="_blank"><img src="res/svg/github.svg" alt="Github"></a>
             <span class="line"></span>
         </div>
         <div id="email">
@@ -145,21 +147,40 @@
                     <span class="projectPrompt">Featured Project</span>
                     <span class="projectName">Bugsnack Bugtracker</span>
                     <span class="projectDescription">
-                        <p>A web application built for tracking bugs and issues. Built with teams in mind. Users can create teams and share bugs with each other.</p>
+                        <p>A web application built for tracking bugs and issues. Built with teams in mind. Users can create teams and share bugs with each other. Using React and Express.</p>
                         <br>
-                        <p>Built using React for the front end and ExpressJS for the back end.</p>
+                        <p>You can use <strong>username: test</strong> and <strong>password: test</strong> to login the account that I used to develop the app.</p>
                     </span>
                     <span class="techs">
                         <span class="tech">React</span>
                         <span class="tech">Express</span>
                         <span class="tech">MongoDB</span>
-                        <span class="tech">Heroku</span>
+                        <span class="tech">Mongoose</span>
                         <span class="tech">PassportJS</span>
                     </span>
                     <span class="projectLinks">
-                        <a href=""><img src="./res/svg/more.svg" alt=""></a>
                         <a href="https://github.com/under4/btracker" target="_blank"><img src="./res/svg/github.svg" alt="Github"></a>
                         <a href="https://app.btrackerapi.org/" target="_blank"><img src="./res/svg/out.svg" alt=""></a>
+                    </span>
+                </div>
+            </div>
+            <div class="project invisible">
+                <div class="img square"><img src="./res/img/clipLink.png" alt=""></div>
+                <div class="projectInfo">
+                    <span class="projectPrompt">Featured Project</span>
+                    <span class="projectName">ClipLink</span>
+                    <span class="projectDescription">
+                        <p>A Chrome extension for clipping text and transfering it across computers</p>
+                        <br>
+                        <p>Built using Javascript for the Google Chrome web browser.</p>
+                    </span>
+                    <span class="techs">
+                        <span class="tech">Chrome</span>
+                        <span class="tech">SASS</span>
+                        <span class="tech">Javascript</span>
+                    </span>
+                    <span class="projectLinks">
+                        <a href="https://github.com/uygaronder/clipLink" target="_blank"><img src="./res/svg/github.svg" alt="Github"></a>
                     </span>
                 </div>
             </div>
@@ -171,7 +192,7 @@
                     <span class="projectDescription">
                         <p>My current portfolio website that you are currently in. The background is a live render using ThreeJS</p>
                         <br>
-                        <p>It's built using using Javascript HTML and CSS. To showcase my projects.</p>
+                        <p>It's built using using Javascript HTML and CSS. To showcase some of my projects.</p>
                     </span>
                     <span class="techs">
                         <span class="tech">JS</span>
@@ -179,8 +200,7 @@
                         <span class="tech">SASS</span>
                     </span>
                     <span class="projectLinks">
-                        <a href=""><img src="./res/svg/github.svg" alt=""></a>
-                        <a href=""><img src="./res/svg/out.svg" alt=""></a>
+                        <a href="https://github.com/uygaronder/portfolio_site" target="_blank"><img src="./res/svg/github.svg" alt=""></a>
                     </span>
                 </div>
             </div>
@@ -188,44 +208,96 @@
         
     </section>
     <section id="smallerProjectsContainer">
+        <h2>Some Smaller Stuff</h2>
         <div id="smallerProjects">
             <div class="smallerProject">
-                <img src="https://via.placeholder.com/200x200" alt="">
-                <span class="morePrompt">
-                    <p>See Project</p>
-                </span>
-            </div>
-            <div class="smallerProject">
-                <img src="https://via.placeholder.com/200x200" alt="">
-                <span class="morePrompt">
-                    <p>See Project</p>
-                </span>
-            </div>
-            <div class="smallerProject">
-                <img src="https://via.placeholder.com/200x200" alt="">
-                <span class="morePrompt">
-                    <p>See Project</p>
-                </span>
-            </div>
-            <div class="smallerProject">
-                <img src="https://via.placeholder.com/200x200" alt="">
+                <img src="./sites/easybank/resources/easybank.png" alt="">
                 <span class="morePrompt">
                     <p>See Project</p>
                 </span>
                 <div class="moreContainer noDisplay">
                     <div class="projectMore">
                         <div class="miniProjectImages scroll">
-                            <img class="biggerImage" src="https://via.placeholder.com/600x1100" alt="">
+                            <img class="biggerImage" src="./sites/easybank/resources/easybank.png" alt="">
                             <div class="imagesSmaller">
-                                <img class="miniImage imgActive" src="https://via.placeholder.com/600x1100" alt="">
-                                <img class="miniImage" src="https://via.placeholder.com/500x300" alt="">
+                                <img class="miniImage imgActive" src="./sites/easybank/resources/easybank.png" alt="">
+                                <img class="miniImage" src="./sites/easybank/resources/easybankFull.png" alt="">
                             </div>
                         </div>
                         <div class="miniProjectInfo">
-                            <p>Project Name</p>
+                            <p>Easybank</p>
                             <div class="miniOutLinks">
-                                <a href="#"><img src="res/svg/out.svg" alt=""></a>
-                                <a href="#"><img src="res/svg/github.svg" alt=""></a>
+                                <a href="./sites/easybank/index.html"><img src="res/svg/out.svg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="smallerProject">
+                <img src="./sites/coca/res/img/Coca.png" alt="">
+                <span class="morePrompt">
+                    <p>See Project</p>
+                </span>
+                <div class="moreContainer noDisplay">
+                    <div class="projectMore">
+                        <div class="miniProjectImages scroll">
+                            <img class="biggerImage" src="./sites/rencar/res/img/rencar.png" alt="">
+                            <div class="imagesSmaller">
+                                <img class="miniImage imgActive" src="./sites/coca/res/img/Coca.png" alt="">
+                                <img class="miniImage" src="./sites/coca/res/img/cocaFullpage.png" alt="">
+                            </div>
+                        </div>
+                        <div class="miniProjectInfo">
+                            <p>Coca Rental Website</p>
+                            <div class="miniOutLinks">
+                                <a href="./sites/coca/index.html"><img src="res/svg/out.svg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="smallerProject">
+                <img src="./sites/sunnyside/resources/sunnyside.png" alt="">
+                <span class="morePrompt">
+                    <p>See Project</p>
+                </span>
+                <div class="moreContainer noDisplay">
+                    <div class="projectMore">
+                        <div class="miniProjectImages scroll">
+                            <img class="biggerImage" src="./sites/rencar/res/img/rencar.png" alt="">
+                            <div class="imagesSmaller">
+                                <img class="miniImage imgActive" src="./sites/sunnyside/resources/sunnyside.png" alt="">
+                                <img class="miniImage" src="./sites/sunnyside/resources/sunnysideFull.png" alt="">
+                            </div>
+                        </div>
+                        <div class="miniProjectInfo">
+                            <p>Sunnyside</p>
+                            <div class="miniOutLinks">
+                                <a href="./sites/sunnyside/index.html"><img src="res/svg/out.svg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="smallerProject">
+                <img src="./sites/rencar/res/img/rencar.png" alt="">
+                <span class="morePrompt">
+                    <p>See Project</p>
+                </span>
+                <div class="moreContainer noDisplay">
+                    <div class="projectMore">
+                        <div class="miniProjectImages scroll">
+                            <img class="biggerImage" src="./sites/rencar/res/img/rencar.png" alt="">
+                            <div class="imagesSmaller">
+                                <img class="miniImage imgActive" src="./sites/rencar/res/img/rencar.png" alt="">
+                                <img class="miniImage" src="./sites/rencar/res/img/rencar-fullpage.png" alt="">
+                                <img class="miniImage" src="./sites/rencar/res/img/rencarMobile.png" alt="">
+                            </div>
+                        </div>
+                        <div class="miniProjectInfo">
+                            <p>Rencar Website</p>
+                            <div class="miniOutLinks">
+                                <a href="./sites/rencar/rencar.html"><img src="res/svg/out.svg" alt=""></a>
                             </div>
                         </div>
                     </div>
