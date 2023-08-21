@@ -458,7 +458,7 @@ section {
     overflow: hidden;
   }
   section {
-    padding: 0 50px;
+    padding: 0 10%;
   }
   #smallerProjects {
     padding: 8px;
@@ -473,7 +473,7 @@ section {
   }
   section {
     font-size: 1rem;
-    padding: 0 10%;
+    padding: 0 15%;
   }
   #hero {
     padding: 0;

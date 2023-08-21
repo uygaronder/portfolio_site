@@ -30,6 +30,7 @@
   --backColor: #050e1b;
   --backColorLighter: #0a1d36;
   --navColor: #010813;
+  --padding: 15px;
 }
 
 * {
