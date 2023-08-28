@@ -27,7 +27,7 @@ function scrollToSection(section) {
 
 const projects = document.querySelectorAll(".project");
 
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries, index) => {
     entries.forEach(
         (entry) => {
             entry.target.classList.toggle(
